@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<div class="container" style="width: 50%">
+  <h1>Posts</h1>
+
+    <% @posts.each do |post| %>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+              <th scope="col">Title</th>
+              <th scope="col">User</th>
+              <th scope="col">User Active</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><%= post.title %></td></td>
+            <td><%= post.user.email %></td></td>
+            <td><%= post.active %></td>
+            <td><%= link_to 'Show', post %></td>
+            <td><%= link_to 'Edit', edit_post_path(post) %></td>
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          </tr>
+        
+        </tbody>
+      </table>
+      <% end %>
+
+  <br>
+
+  <%= link_to 'New Post', new_post_path, class: "btn btn-primary"%>
+</div>
+

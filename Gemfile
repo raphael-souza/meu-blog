@@ -63,5 +63,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 #gems add to blog project
 gem 'devise' # devera executar export RUBY_DEP_GEM_SILENCE_WARNINGS=1
-gem 'bootstrap'
 gem 'paperclip'
+gem 'simple_form'
+
+ENV['RUBY_DEP_GEM_SILENCE_WARNINGS'] = '1'
