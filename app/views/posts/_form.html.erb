@@ -10,49 +10,56 @@
       </ul>
     </div>
   <% end %>
-  <div class="container offset-2 card text-white bg-info mb-3" style="padding: 10%">
-    <div class="form-group row">
-      <div class="field col-md-2">
-        <%= form.label :title %>
+  <div class="container card bg-white mb-3" style="padding: 10%">
+    <div class="card  border-dark mb-3" >
+      <div class="card-header">
+        <h3> Post </h3>
       </div>
-      <div class="col-md-2">
-        <%= form.text_field :title %>
+      <div class="card-body">
+        <div class="form-group row">
+          <div class="field col-md-2">
+            <%= form.label :title %>
+          </div>
+          <div class="col-md-2">
+            <%= form.text_field :title %>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <div class="col-md-2">
+            <%= form.label :body %>
+          </div>
+          <div class="col-md-4">
+            <%= form.text_area :body %>
+          </div>
+        </div>
+
+        <div class="form-group ">
+            <%= form.label :active %>
+            <%= form.check_box :active %>
+        </div>
+
+        <div class="row">
+          <div class=" form-group col-md-4" %>
+            <%= form.label :user_id %>
+            <%= form.association :user , association: current_user.email, label_method: :email , value_method: :id, prompt: false , label: false %>
+          </div>
+
+          <div class="form-group col-md-2">
+            <label> Category </label>
+            <%= form.association :category , label: false%>
+          </div>   
+        </div>
+
+        <div class=" form-group col-md-5" style="padding-top: 50px;">
+            <%= form.label :image%>
+            <%= form.file_field :image %>
+        </div>
+
+        <div class="actions form-inputs" style="padding-top: 30px">
+          <%= form.button :submit , class: 'btn btn-info' %>
+        </div>
       </div>
-    </div>
-
-    <div class="form-group row">
-      <div class="col-md-2">
-        <%= form.label :body %>
-      </div>
-      <div class="col-md-4">
-        <%= form.text_area :body %>
-      </div>
-    </div>
-
-    <div class="form-group ">
-        <%= form.label :active %>
-        <%= form.check_box :active %>
-    </div>
-
-    <div class="row">
-      <div class=" form-group col-md-2">
-        <%= form.label :user_id %>
-        <%= form.association :user , association: current_user.email, label_method: :email , value_method: :id, prompt: false , label: false %>
-      </div>
-
-      <div class="form-group col-md-2">
-        <%= form.label :category %>
-        <%= form.association :category , label: false%>
-      </div>   
-    </div>
-
-    <div class=" form-group col-md-5" style="padding-top: 50px;">
-        <%= form.label :image%>
-        <%= form.file_field :image %>
-    </div>
-
-    <div class="actions form-inputs" style="padding-top: 30px">
-      <%= form.button :submit , class: 'btn btn-success' %>
     </div>
   </div>
 <% end %>

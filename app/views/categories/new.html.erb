@@ -1,5 +1,17 @@
-<h1>New Category</h1>
+<div class="container card">
 
-<%= render 'form', category: @category %>
+  <div class="card border-dark mb-3" style="max-width: 30rem;">
+  <div class="card-header"><h1>New Category</h1></div>
+  <div class="card-body text-dark">
+    <%= render 'form', category: @category %>
 
-<%= link_to 'Back', categories_path %>
+    <div class="badge badge-pill badge-light">
+        <span>
+            <%= link_to 'Back', categories_path %>
+        </span>
+    </div>
+    
+  </div>
+</div>
+
+</div>

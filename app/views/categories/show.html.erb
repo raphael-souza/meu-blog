@@ -1,9 +1,19 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @category.name %>
-</p>
+<div class="container card">
+  <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+  <p>
+    <strong>Name:</strong>
+    <%= @category.name %>
+  </p>
+
+  <div class="badge badge-pill badge-light">
+   <span>
+      <%= link_to 'Back', categories_path %> | 
+    </span>
+    <span>
+      <%= link_to 'Edit', edit_category_path(@category) %> 
+    </span>
+  </div>
+
+</div>
